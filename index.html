@@ -243,7 +243,7 @@ const CATEGORIES = [
   {id:'luyentap',label:'Luyện tập', sub:'Luyện 4 kỹ năng · ôn tập tổng hợp'},
   {id:'tracuu',  label:'Tra cứu',   sub:'Từ vựng & ngữ pháp Bài 1–20'},
   {id:'filenghe',label:'Audio sách bài tập', sub:'Luyện nghe theo từng bài'},
-  {id:'thithu',  label:'Thi thử',   sub:'Đề mẫu HSK 4 · HSKK trung cấp'},
+  {id:'thithu',  label:'Thi thử',   sub:'2 đề HSK 4 · Đề mẫu thi nói'},
 ];
 const N=20, HALF=10;
 const BOOK=n=>n<=HALF?'up':'dn';
@@ -266,7 +266,7 @@ const LESSONS=[
   ...range(n=>({n,book:BOOK(n),hanzi:'',titleVi:`Bài ${n}`,category:'filenghe',desc:'Audio sách bài tập · Luyện nghe',href:'',soon:true})),
   {hanzi:'四级模拟试卷 · 一',titleVi:'Thi thử HSK 4 · Đề 1',category:'thithu',desc:'70 câu · khoảng 85 phút · Thi thật hoặc luyện tập · Nghe · Đọc · Viết',href:'thi-thu-hsk4-de1.html',ico:'一'},
   {hanzi:'四级模拟试卷 · 二',titleVi:'Thi thử HSK 4 · Đề 2',category:'thithu',desc:'70 câu · khoảng 85 phút · Thi thật hoặc luyện tập · Nghe · Đọc · Viết',href:'thi-thu-hsk4-de2.html',ico:'二'},
-  {hanzi:'HSKK（中级）样卷',titleVi:'Thi thử HSKK trung cấp · Đề mẫu',category:'thithu',desc:'Phần nói · Ghi âm từng câu, gửi cho Thầy chấm',href:'',soon:true,ico:'口'},
+  {hanzi:'HSK（四级）口语 · 样卷',titleVi:'Thi thử Nói HSK 4 · Đề mẫu',category:'thithu',desc:'Nghe rồi kể lại · Nhìn tranh nói · Trả lời câu hỏi · Ghi âm gửi Thầy chấm',href:'thi-noi-hsk4-mau.html',ico:'说'},
 ];
 /* Mã khóa từng mục (dùng khi có gy-auth.js): Bài 1 mở miễn phí */
 const UNIT_OF=l=>{if(l.unit)return l.unit;if((l.category==='baihoc'||l.category==='luyentap')&&l.n>1)return 'L'+l.n;if(l.category==='tracuu')return 'TC';
