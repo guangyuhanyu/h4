@@ -211,7 +211,7 @@ if(!HAS_GY)window.GY={session:()=>null,rawSession:()=>null,key:()=>true,login:as
 <script>
 /* ================== THẦY CHỈNH Ở ĐÂY ================== */
 /* Số bài đã có (bài giảng + bài tập). Bài sau số này hiện "Sắp ra mắt". */
-const DONE = 10;
+const DONE = 20;
 /* Tên bài (chữ Hán) – điền theo sách, để "" nếu chưa có. Bài 1–10: Quyển 上 · Bài 11–20: Quyển 下 */
 const TITLES = [
   "我们来中国学习了",
@@ -230,7 +230,7 @@ const TITLES = [
   "合适才买",
   "我去应聘了",
   "计划赶不上变化",
-  "运动让我健康",
+  "运动让我更健康",
   "科技改变生活",
   "他们都很棒",
   "看不完也读不完"
@@ -241,7 +241,7 @@ const ICO=["data:image/webp;base64,UklGRvQtAABXRUJQVlA4WAoAAAAQAAAAdQAAiwAAQUxQS
 const CATEGORIES = [
   {id:'baihoc',  label:'Bài học',   sub:'Bài giảng 20 bài HSK4'},
   {id:'luyentap',label:'Luyện tập', sub:'Luyện 4 kỹ năng · ôn tập tổng hợp'},
-  {id:'tracuu',  label:'Tra cứu',   sub:'Từ vựng & ngữ pháp Bài 1–10'},
+  {id:'tracuu',  label:'Tra cứu',   sub:'Từ vựng & ngữ pháp Bài 1–20'},
   {id:'filenghe',label:'Audio sách bài tập', sub:'Luyện nghe theo từng bài'},
   {id:'thithu',  label:'Thi thử',   sub:'Đề mẫu HSK 4 · HSKK trung cấp'},
 ];
@@ -258,13 +258,14 @@ const LESSONS=[
   ...range(n=>({n,book:BOOK(n),hanzi:TITLES[n-1]||'',titleVi:`Bài ${n}`,category:'luyentap',desc:PRACTICE,href:`on-tap-bai${n}.html`,soon:n>DONE})),
   {hanzi:'总复习 1–5',titleVi:'Ôn tập Bài 1–5',category:'luyentap',group:'Ôn tập tổng hợp',desc:REV,href:'on-tap-tong-hop-1-5.html',ico:'复',dark:false},
   {hanzi:'总复习 6–10',titleVi:'Ôn tập Bài 6–10',category:'luyentap',group:'Ôn tập tổng hợp',desc:REV,href:'on-tap-tong-hop-6-10.html',ico:'复',dark:false},
-  {hanzi:'总复习 11–15',titleVi:'Ôn tập Bài 11–15',category:'luyentap',group:'Ôn tập tổng hợp',desc:REV,href:'on-tap-tong-hop-11-15.html',soon:true,ico:'复',dark:true},
-  {hanzi:'总复习 16–20',titleVi:'Ôn tập Bài 16–20',category:'luyentap',group:'Ôn tập tổng hợp',desc:REV,href:'on-tap-tong-hop-16-20.html',soon:true,ico:'复',dark:true},
-  {hanzi:'总复习 1–20',titleVi:'Ôn tập Bài 1–20',category:'luyentap',group:'Ôn tập tổng hợp',desc:'Theo dạng đề HSK 4 · Nghe · Đọc hiểu · Viết · Ngữ pháp · Nói',href:'on-tap-tong-hop-1-20.html',soon:true,ico:'总'},
-  {hanzi:'词汇查询',titleVi:'Tra cứu từ vựng',category:'tracuu',desc:'400 từ Bài 1–10 · Chữ Hán, pinyin, Hán Việt, nghĩa, nghe phát âm · Lọc theo bài · Rút ngẫu nhiên',href:'tra-cuu-HSK4.html#tu-vung',ico:'词'},
-  {hanzi:'语法查询',titleVi:'Tra cứu ngữ pháp',category:'tracuu',desc:'41 điểm ngữ pháp Bài 1–10 · Công thức, ví dụ có nghe, lỗi hay gặp · Rút ngẫu nhiên',href:'tra-cuu-HSK4.html#ngu-phap',ico:'法'},
+  {hanzi:'总复习 11–15',titleVi:'Ôn tập Bài 11–15',category:'luyentap',group:'Ôn tập tổng hợp',desc:REV,href:'on-tap-tong-hop-11-15.html',ico:'复',dark:true},
+  {hanzi:'总复习 16–20',titleVi:'Ôn tập Bài 16–20',category:'luyentap',group:'Ôn tập tổng hợp',desc:REV,href:'on-tap-tong-hop-16-20.html',ico:'复',dark:true},
+  {hanzi:'总复习 1–20',titleVi:'Ôn tập Bài 1–20',category:'luyentap',group:'Ôn tập tổng hợp',desc:REV+' · Cả 20 bài',href:'on-tap-tong-hop-1-20.html',ico:'总'},
+  {hanzi:'词汇查询',titleVi:'Tra cứu từ vựng',category:'tracuu',desc:'830 từ Bài 1–20 · Chữ Hán, pinyin, Hán Việt, nghĩa, nghe phát âm · Lọc theo bài · Rút ngẫu nhiên',href:'tra-cuu-HSK4.html#tu-vung',ico:'词'},
+  {hanzi:'语法查询',titleVi:'Tra cứu ngữ pháp',category:'tracuu',desc:'82 điểm ngữ pháp Bài 1–20 · Công thức, ví dụ có nghe, lỗi hay gặp · Rút ngẫu nhiên',href:'tra-cuu-HSK4.html#ngu-phap',ico:'法'},
   ...range(n=>({n,book:BOOK(n),hanzi:'',titleVi:`Bài ${n}`,category:'filenghe',desc:'Audio sách bài tập · Luyện nghe',href:'',soon:true})),
-  {hanzi:'新版HSK（四级）样题',titleVi:'Thi thử HSK 4 · Đề mẫu',category:'thithu',desc:'Nghe · Đọc · Viết theo đề mẫu chính thức',href:'',soon:true,ico:'试'},
+  {hanzi:'四级模拟试卷 · 一',titleVi:'Thi thử HSK 4 · Đề 1',category:'thithu',desc:'70 câu · khoảng 85 phút · Thi thật hoặc luyện tập · Nghe · Đọc · Viết',href:'thi-thu-hsk4-de1.html',ico:'一'},
+  {hanzi:'四级模拟试卷 · 二',titleVi:'Thi thử HSK 4 · Đề 2',category:'thithu',desc:'70 câu · khoảng 85 phút · Thi thật hoặc luyện tập · Nghe · Đọc · Viết',href:'thi-thu-hsk4-de2.html',ico:'二'},
   {hanzi:'HSKK（中级）样卷',titleVi:'Thi thử HSKK trung cấp · Đề mẫu',category:'thithu',desc:'Phần nói · Ghi âm từng câu, gửi cho Thầy chấm',href:'',soon:true,ico:'口'},
 ];
 /* Mã khóa từng mục (dùng khi có gy-auth.js): Bài 1 mở miễn phí */
