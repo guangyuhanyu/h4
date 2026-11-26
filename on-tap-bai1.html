@@ -397,4 +397,6 @@ $('#sendBtn').onclick=async()=>{const M=$('#sendMsg'),B=$('#sendBtn');B.disabled
  catch(e){B.disabled=false;M.className='msg no';M.textContent='Gửi chưa được, bạn kiểm tra mạng rồi bấm gửi lại nhé.'}};
 $('#redoBtn').onclick=()=>{try{localStorage.removeItem(KEY)}catch(e){}location.reload()};
 })();</script>
+<!-- GY-TOOLS loader v1 · công cụ giáo viên dùng chung (chỉ tải trên máy đã bật ?gv=1) -->
+<script>(function(){try{var q=location.search.match(/[?&]gv=([01])/);if(q)localStorage.setItem('gy-teacher',q[1]);if(localStorage.getItem('gy-teacher')!=='1')return;}catch(e){return;}var s=document.createElement('script');s.src='https://guangyuhanyu.github.io/gy-tools.js?t='+Math.floor(Date.now()/6e5);(document.head||document.documentElement).appendChild(s);})();</script>
 </body></html>
